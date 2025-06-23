@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpeedAir - Confidence in Every Flight</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="SpeedairHome.css" />
+
+  <!-- Optional Theme or Extra Styles -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #fff);
+      color: #333;
+    }
+
+    .welcome-text {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .hero-bg {
+      background: url('https://images.unsplash.com/photo-1526779259212-756e7f1743d1?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      height: 300px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #0077b6;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+
+  <!-- JS functionality -->
+  <script src="SpeedairHome.js" defer></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="/SpeedAir/pictures/SpeedairIcon.png" alt="SpeedAir Logo" />
+        <span>SpeedAir</span>
+      </div>
+      <nav>
+        <a href="#contact">About us</a>
+        <a href="#about">Travel Extras</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Reviews</a>
+        <a href="#contact">Contact & Support</a>
+        <span class="dropdown">⋮</span>
+      </nav>
+    </header>
+
+    <!-- Hero Background -->
+    <div class="hero-bg"></div>
+
+    <!-- Flight Search Form -->
+    <div class="hero">
+      <div class="flight-form">
+        <div class="trip-type">
+          <label><input type="radio" name="trip" value="round" checked /> Roundtrip</label>
+          <label><input type="radio" name="trip" value="oneway" /> One-way</label>
+        </div>
+
+        <div class="form-line">
+          <input type="text" id="depart" placeholder="Depart from" />
+          <button id="reverse">&#8646;</button>
+          <input type="text" id="arrive" placeholder="Arrive at" />
+          <input type="date" id="depart-date" />
+          <input type="date" id="return-date" />
+          <button id="traveller-toggle">1 Adult, Economy</button>
+          <button class="search-btn">Search</button>
+        </div

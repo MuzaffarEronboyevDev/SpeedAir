@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | SpeedAir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="SpeedairHome.css" />
+    <script src="SpeeadairHome.js" defer></script>
+    <style>
+      .about-container {
+        max-width: 1000px;
+        margin: 140px auto 40px;
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+        animation: fadeInUp 1s ease-out;
+      }
+      .about-container h2 {
+        color: #056fcc;
+        margin-top: 40px;
+        font-size: 1.6rem;
+      }
+      .about-container p {
+        line-height: 1.6;
+        margin-top: 10px;
+      }
+      .about-values {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+      }
+      .about-value {
+        background: #e0f2fe;
+        padding: 20px;
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: slideIn 0.8s ease forwards;
+      }
+      .about-value:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+      .about-value strong {
+        display: block;
+        margin-bottom: 8px;
+        color: #056fcc;
+        font-weight: 600;
+      }
+      .about-container ul {
+        margin-top: 20px;
+        padding-left: 18px;
+      }
+      .about-container ul li {
+        margin-bottom: 12px;
+        opacity: 0;
+        animation: fadeInList 0.6s ease forwards;
+        animation-delay: calc(0.1s * var(--i, 1));
+        list-style: disc;
+      }
+      .about-container a {
+        color: #056fcc;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      .about-container a:hover {
+        color: #003973;
+      }
+      #find-location {
+        background: #056fcc;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 500;
+        margin-top: 12px;
+        transition: background 0.3s;
+      }
+      #find-location:hover {
+        background: #035bb3;
+      }
+      #map-container {
+        margin-top: 18px;
+        min-height: 320px;
+        animation: fadeIn 1s ease;
+      }
+      .phone-icon {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #218737;
+        color: white;
+        font-size: 1.4rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.3s ease, background 0.3s ease;
+        z-index: 1002;
+      }
+      .phone-icon:hover {
+        background: #023e8a;
+        transform: scale(1.1);
+      }
+      .about-footer {
+        text-align: center;
+        padding: 20px 0;
+        background: #003973;
+        color: #fff;
+        font-size: 0.95rem;
+        margin-top: 60px;
+        animation: fadeIn 1s ease-in;
+      }
+      @keyframes slideIn {
+        from { opacity: 0; transform: translateX(-20px);}
+        to { opacity: 1; transform: translateX(0);}
+      }
+      @keyframes fadeInList {
+        from { opacity: 0; transform: translateY(10px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      @keyframes fadeIn {
+        from { opacity: 0;}
+        to { opacity: 1;}
+      }
+      @media (max-width: 700px) {
+        .about-container {
+          padding: 18px;
+        }
+        .about-values {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="logo">
+        <img src="/SpeedAir/pictures/SpeedairIcon.png" alt="SpeedAir Logo" />
+        <span>SpeedAir</span>
+      </div>
+      <nav>
+        <a href="/SpeedAir/about.html" class="nav1">About us</a>
+        <a href="/SpeedAir/services.html" class="nav2">Services</a>
+        <a href="/SpeedAir/review.html" class="nav3">Reviews</a>
+        <a href="/SpeedAir/contact.html" class="nav4">Contact & Support</a>
+        <div class="dropdown" tabindex="0">
+          <span class="bar"><i class="fa-solid fa-bars"></i></span>
+          <div class="dropdown-menu">
+            <a href="/SpeedAir/about.html" class="nav1">About us</a>
+            <a href="/SpeedAir/services.html" class="nav2">Services</a>
+            <a href="/SpeedAir/review.html" class="nav3">Reviews</a>
+            <a href="/SpeedAir/contact.html" class="nav4">Contact & Support</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="about-container">
+      <h2>Who We Are</h2>
+      <p>
+        SpeedAir is a leading travel agency dedicated to making your journeys seamless, memorable, and affordable. With years of experience in the travel industry, our passionate team is committed to providing personalized travel solutions for individuals, families, and businesses.
+      </p>
+      <h2>Our Mission</h2>
+      <p>
+        To inspire and enable people to explore the world by offering exceptional travel experiences, outstanding customer service, and unbeatable value.
+      </p>
+      <h2>Our Values</h2>
+      <div class="about-values">
+        <div class="about-value">
+          <strong>Customer Focus</strong>
+          <p>We put your needs first, ensuring every trip is tailored to your preferences.</p>
+        </div>
+        <div class="about-value">
+          <strong>Reliability</strong>
+          <p>Count on us for transparent, hassle-free bookings and support at every step.</p>
+        </div>
+        <div class="about-value">
+          <strong>Expertise</strong>
+          <p>Our experienced agents provide insider tips and the best travel deals worldwide.</p>
+        </div>
+      </div>
+      <h2>Why Choose SpeedAir?</h2>
+      <ul>
+        <li style="--i:1">Wide range of domestic and international destinations</li>
+        <li style="--i:2">Customized travel packages</li>
+        <li style="--i:3">24/7 customer support</li>
+        <li style="--i:4">Competitive pricing and exclusive offers</li>
+        <li style="--i:5">Trusted by thousands of happy travelers</li>
+      </ul>
+      <h2>Our Location</h2>
+      <div style="margin-bottom: 24px;">
+        <button id="find-location">
+            Show My Current Location on Map
+        </button>
+        <div id="map-container"></div>
+      </div>
+      <script>
+        document.getElementById('find-location').onclick = function() {
+            if (!navigator.geolocation) {
+                document.getElementById('map-container').innerHTML = "Geolocation is not supported by your browser.";
+                return;
+            }
+            document.getElementById('map-container').innerHTML = "Locating...";
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                const lat = pos.coords.latitude;
+                const lon = pos.coords.longitude;
+                const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${lon-0.01},${lat-0.01},${lon+0.01},${lat+0.01}&layer=mapnik&marker=${lat},${lon}`;
+                document.getElementById('map-container').innerHTML =
+                    `<iframe width="100%" height="320" frameborder="0" src="${mapUrl}" style="border-radius:8px;"></iframe>
+                     <div style="margin-top:8px;"><a href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}" target="_blank" style="color:#056fcc;">View Larger Map</a></div>`;
+            }, function() {
+                document.getElementById('map-container').innerHTML = "Unable to retrieve your location.";
+            });
+        };
+      </script>
+      <h2>Contact Us</h2>
+      <p>
+        Ready to plan your next adventure? <br>
+        Email: <a href="mailto:info@speedair.com">info@speedair.com</a> <br>
+        Phone: +1 (555) 123-4567
+      </p>
+    </div>
+    <div class="phone-icon" onclick="window.location.href='tel:104'">
+      <i class="fas fa-phone"></i>
+    </div>
+    <footer class="about-footer">
+      &copy; 2024 SpeedAir Travel Agency. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>

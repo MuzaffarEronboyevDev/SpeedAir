@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | SpeedAir</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="SpeedairHome.css" />
+  <script src="SpeeadairHome.js" defer></script>
+  <style>
+    .services-container {
+      max-width: 900px;
+      margin: 140px auto 40px auto;
+      background: #fff;
+      padding: 32px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      animation: fadeInUp 1.2s ease-out;
+    }
+    .services-container h2 {
+      color: #056fcc;
+      margin-top: 24px;
+    }
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 24px;
+    }
+    .service-item {
+      flex: 1 1 250px;
+      background: #e0f2fe;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideIn 0.8s ease forwards;
+    }
+    .service-item i {
+      color: #056fcc;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @media (max-width: 700px) {
+      .services-container {
+        padding: 16px;
+      }
+      .service-list {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="logo">
+        <img src="/SpeedAir/pictures/SpeedairIcon.png" alt="SpeedAir Logo" />
+        <span>SpeedAir</span>
+      </div>
+      <nav>
+        <a href="/SpeedAir/about.html" class="nav1">About us</a>
+        <a href="/SpeedAir/services.html" class="nav2">Services</a>
+        <a href="/SpeedAir/review.html" class="nav3">Reviews</a>
+        <a href="/SpeedAir/contact.html" class="nav4">Contact & Support</a>
+        <div class="dropdown" tabindex="0">
+          <span class="bar"><i class="fa-solid fa-bars"></i></span>
+          <div class="dropdown-menu">
+            <a href="/SpeedAir/about.html" class="nav1">About us</a>
+            <a href="/SpeedAir/services.html" class="nav2">Services</a>
+            <a href="/SpeedAir/review.html" class="nav3">Reviews</a>
+            <a href="/SpeedAir/contact.html" class="nav4">Contact & Support</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="services-container">
+      <h2>Our Services</h2>
+      <div class="service-list">
+        <div class="service-item">
+          <i class="fa-solid fa-plane-departure"></i>
+          <strong>Flight Bookings</strong>
+          <p>Book domestic and international flights with the best deals and flexible options.</p>
+        </div>
+        <div class="service-item">
+          <i class="fa-solid fa-hotel"></i>
+          <strong>Hotel Reservations</strong>
+          <p>Choose from a wide range of hotels and accommodations to suit your needs and budget.</p>
+        </div>
+        <div class="service-item">
+          <i class="fa-solid fa-car"></i>
+          <strong>Car Rentals</strong>
+          <p>Rent cars at your destination for convenience and comfort during your travels.</p>
+        </div>
+        <div class="service-item">
+          <i class="fa-solid fa-suitcase-rolling"></i>
+          <strong>Travel Packages</strong>
+          <p>Enjoy customized travel packages for families, couples, and solo adventurers.</p>
+        </div>
+        <div class="service-item">
+          <i class="fa-solid fa-shield-alt"></i>
+          <strong>Travel Insurance</strong>
+          <p>Travel with peace of mind with our comprehensive insurance options.</p>
+        </div>
+        <div class="service-item">
+          <i class="fa-solid fa-headset"></i>
+          <strong>24/7 Support</strong>
+          <p>Our team is available around the clock to assist you before, during, and after your trip.</p>
+        </div>
+      </div>
+      <h2>Need Something Special?</h2>
+      <p>
+        Contact us for group bookings, business travel solutions, or any special requests. We're here to make your journey perfect!
+      </p>
+      <p>
+        Email: <a href="mailto:info@speedair.com">info@speedair.com</a> <br>
+        Phone: +1 (555) 123-4567
+      </p>
+    </div>
+    <footer class="about-footer">
+      &copy; 2024 SpeedAir Travel Agency. All rights reserved.
+    </footer>

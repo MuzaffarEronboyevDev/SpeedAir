@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Reviews | SpeedAir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="SpeedairHome.css" />
+    <script src="SpeeadairHome.js" defer></script>
+    <style>
+      body {
+        background: linear-gradient(120deg, #e0f2ff 0%, #f8fbff 100%);
+      }
+      .reviews-container {
+        max-width: 1000px;
+        margin: 140px auto 40px auto;
+        background: #fff;
+        padding: 0;
+        border-radius: 18px;
+        box-shadow: 0 4px 32px rgba(5,111,204,0.10);
+        animation: fadeInUp 1.2s cubic-bezier(.4,0,.2,1);
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        overflow: hidden;
+      }
+      .trust-box {
+        background: linear-gradient(90deg, #e6f7ff 60%, #f7fbff 100%);
+        border-left: 5px solid #056fcc;
+        padding: 2.2rem 2rem 2.2rem 2.5rem;
+        font-size: 1.15em;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        margin-bottom: 0;
+        animation: fadeIn 1.2s 0.2s both;
+      }
+      .reviews-main {
+        padding: 36px 36px 0 36px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .reviews-header {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 10px;
+      }
+      .reviews-header i {
+        color: #056fcc;
+        font-size: 2.1rem;
+        opacity: 0.85;
+      }
+      .reviews-header h2 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #003973;
+        letter-spacing: 0.01em;
+      }
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin-bottom: 24px;
+      }
+      .review-card {
+        background: #f7fbff;
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(5,111,204,0.07);
+        padding: 28px 22px 22px 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: 180px;
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+        animation: cardFadeIn 0.7s cubic-bezier(.4,0,.2,1) forwards;
+      }
+      .review-card:nth-child(1) { animation-delay: 0.1s; }
+      .review-card:nth-child(2) { animation-delay: 0.2s; }
+      .review-card:nth-child(3) { animation-delay: 0.3s; }
+      .review-card:nth-child(4) { animation-delay: 0.4s; }
+      .review-card:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(5,111,204,0.13);
+        background: linear-gradient(120deg, #e0f2fe 70%, #f7fbff 100%);
+      }
+      .reviewer {
+        font-weight: bold;
+        color: #056fcc;
+        margin-top: 12px;
+        font-size: 1.08em;
+        letter-spacing: 0.01em;
+      }
+      .stars {
+        color: #f5b301;
+        font-size: 1.3em;
+        margin-bottom: 8px;
+        letter-spacing: 0.08em;
+        filter: drop-shadow(0 1px 2px #fff6);
+      }
+      .review-card p {
+        margin: 0 0 8px 0;
+        color: #003973;
+        font-size: 1.08em;
+        line-height: 1.5;
+      }
+      .leave-review-box {
+        background: #e0f2fe;
+        border-radius: 12px;
+        padding: 32px 18px 28px 18px;
+        margin: 0 0 0 0;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(5,111,204,0.06);
+        animation: fadeInUp 1s 0.5s both;
+      }
+      .leave-review-box h3 {
+        margin-top: 0;
+        font-size: 1.2em;
+        color: #056fcc;
+        font-weight: 600;
+      }
+      .leave-review-box a {
+        display: inline-block;
+        background: #056fcc;
+        color: #fff;
+        padding: 0.75rem 2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 18px;
+        font-size: 1.08em;
+        box-shadow: 0 2px 8px rgba(5,111,204,0.10);
+        transition: background 0.3s, transform 0.2s;
+      }
+      .leave-review-box a:hover {
+        background: #003973;
+        transform: scale(1.04);
+      }
+      @media (max-width: 900px) {
+        .reviews-container {
+          padding: 0;
+        }
+        .reviews-main {
+          padding: 24px 10px 0 10px;
+        }
+        .reviews-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+      }
+      @media (max-width: 600px) {
+        .reviews-container {
+          margin: 100px 0 20px 0;
+          border-radius: 0;
+        }
+        .trust-box {
+          padding: 1.2rem 1rem 1.2rem 1.2rem;
+        }
+        .reviews-main {
+          padding: 12px 2vw 0 2vw;
+        }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      @keyframes fadeIn {
+        from { opacity: 0;}
+        to { opacity: 1;}
+      }
+      @keyframes cardFadeIn {
+        from { opacity: 0; transform: translateY(40px) scale(0.98);}
+        to { opacity: 1; transform: translateY(0) scale(1);}
+      }
+    </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="logo">
+        <img src="/SpeedAir/pictures/SpeedairIcon.png" alt="SpeedAir Logo" />
+        <span>SpeedAir</span>
+      </div>
+      <nav>
+        <a href="about.html" class="nav1">About us</a>
+        <a href="services.html" class="nav3">Services</a>
+        <a href="review.html" class="nav4">Reviews</a>
+        <a href="contact.html" class="nav5">Contact & Support</a>
+        <div class="dropdown" tabindex="0">
+          <span class="bar"><i class="fa-solid fa-bars"></i></span>
+          <div class="dropdown-menu">
+            <a href="about.html" class="nav1">About us</a>
+            <a href="services.html" class="nav3">Services</a>
+            <a href="review.html" class="nav4">Reviews</a>
+            <a href="contact.html" class="nav5">Contact & Support</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="reviews-container">
+      <div class="trust-box">
+        <strong>Why choose SpeedAir?</strong><br>
+        With thousands of happy travelers and years of experience, SpeedAir is committed to making your travel dreams come true. Read what our customers have to say and book with confidence!
+      </div>
+      <div class="reviews-main">
+        <div class="reviews-header">
+          <i class="fa-solid fa-quote-left"></i>
+          <h2>What Our Customers Say</h2>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"SpeedAir made our honeymoon unforgettable! The booking process was smooth and the staff was always available to help. Highly recommended!"</p>
+            <div class="reviewer">– Emily R.</div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"I was nervous about traveling abroad, but SpeedAir took care of everything. I felt safe and supported every step of the way."</p>
+            <div class="reviewer">– Ahmed K.</div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★☆</div>
+            <p>"Great service and excellent value for money. Will definitely book my next trip with SpeedAir!"</p>
+            <div class="reviewer">– Priya S.</div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Professional, reliable, and friendly. SpeedAir exceeded my expectations!"</p>
+            <div class="reviewer">– John D.</div>
+          </div>
+        </div>
+        <div class="leave-review-box">
+          <h3>Want to share your experience?</h3>
+          <p>We value your feedback! Click below to leave a review or contact us for more information.</p>
+          <a href="contact.html"><i class="fa-solid fa-pen-to-square"></i> Leave a Review / Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <footer class="about-footer">
+      &copy; 2024 SpeedAir Travel Agency. All rights reserved.
+    </footer>
+  </div>
+  <script>
+    // Animate review cards on scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      const cards = document.querySelectorAll('.review-card');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0) scale(1)";
+          }
+        });
+      }, { threshold: 0.2 });
+      cards.forEach(card => observer.observe(card));
+    });
+  </script>
+</body>
+</html>
