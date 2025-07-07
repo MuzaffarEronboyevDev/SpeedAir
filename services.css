@@ -1,0 +1,79 @@
+.services-container {
+    max-width: 1200px;
+    margin: 140px auto 80px auto;
+    background: #fff;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.services-container h2 {
+    margin-top: 24px;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.service-item {
+    flex: 1 1 250px;
+    background: #e0f2fe;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideIn 0.8s ease forwards;
+}
+
+.service-item i {
+    color: #056fcc;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    .services-container {
+        padding: 16px;
+    }
+
+    .service-list {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

@@ -1,0 +1,183 @@
+.about-container {
+    max-width: 1500px;
+    margin: 140px auto 80px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    animation: fadeInUp 1s ease-out;
+}
+
+.who-are-we,
+.Our-Mission {
+    display: inline-block;
+    vertical-align: top;
+    width: 46%;
+    box-sizing: border-box;
+    margin-right: 4%;
+}
+
+.Our-Mission {
+    margin-right: 0;
+    /* Remove margin from the last item */
+}
+
+@media (max-width: 700px) {
+
+    .who-are-we,
+    .Our-Mission {
+        display: block;
+        width: 100%;
+        width: 50%;
+    }
+}
+
+.about-container h2 {
+
+    margin-top: 40px;
+    font-size: 1.6rem;
+}
+
+.about-container p {
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.about-value {
+    background: #e0f2fe;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideIn 0.8s ease forwards;
+}
+
+.about-value:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-value strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #056fcc;
+    font-weight: 600;
+}
+
+.about-container ul {
+    margin-top: 20px;
+    padding-left: 18px;
+}
+
+.about-container ul li {
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeInList 0.6s ease forwards;
+    animation-delay: calc(0.1s * var(--i, 1));
+    list-style: disc;
+}
+
+.about-container a {
+    color: #056fcc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.about-container a:hover {
+    color: #003973;
+}
+
+#find-location {
+    background: #056fcc;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 12px;
+    transition: background 0.3s;
+}
+
+#find-location:hover {
+    background: #035bb3;
+}
+
+#map-container {
+    margin-top: 18px;
+    min-height: 320px;
+    animation: fadeIn 1s ease;
+}
+
+#map-dalycity,
+#map-tashkent {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInList {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-container {
+        padding: 18px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}

@@ -1,137 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services | SpeedAir</title>
+  <title data-i18n="services_title">Our Services | SpeedAir</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="SpeedairHome.css" />
-  <script src="SpeeadairHome.js" defer></script>
-  <style>
-    .services-container {
-      max-width: 900px;
-      margin: 140px auto 40px auto;
-      background: #fff;
-      padding: 32px;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      animation: fadeInUp 1.2s ease-out;
-    }
-    .services-container h2 {
-      color: #056fcc;
-      margin-top: 24px;
-    }
-    .service-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      margin-top: 24px;
-    }
-    .service-item {
-      flex: 1 1 250px;
-      background: #e0f2fe;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: slideIn 0.8s ease forwards;
-    }
-    .service-item i {
-      color: #056fcc;
-      font-size: 2rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .service-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-20px);}
-      to { opacity: 1; transform: translateX(0);}
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    @media (max-width: 700px) {
-      .services-container {
-        padding: 16px;
-      }
-      .service-list {
-        flex-direction: column;
-        gap: 12px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="SpeedairHome.css">
+  <link rel="stylesheet" href="services.css">
 </head>
+
 <body>
   <div class="wrapper">
     <header>
       <div class="logo">
-        <img src="/SpeedAir/pictures/SpeedairIcon.png" alt="SpeedAir Logo" />
-        <span>SpeedAir</span>
+        <img src="/pictures/SpeedairIcon.png" onclick="window.location.href='index.html'" alt="SpeedAir Logo" />
+        <span data-i18n="brand">SpeedAir</span>
       </div>
       <nav>
-        <a href="/SpeedAir/about.html" class="nav1">About us</a>
-        <a href="/SpeedAir/services.html" class="nav2">Services</a>
-        <a href="/SpeedAir/review.html" class="nav3">Reviews</a>
-        <a href="/SpeedAir/contact.html" class="nav4">Contact & Support</a>
+        <!-- Language Switcher Start -->
+        <div class="lang-switcher">
+          <button id="lang-btn" aria-haspopup="listbox" type="button">
+            <i class="fa-solid fa-globe"></i>
+            <span id="lang-label">EN</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul id="lang-list" class="lang-list" tabindex="-1" hidden>
+            <li data-lang="en"><i class="fa-solid fa-globe"></i> En</li>
+            <li data-lang="ru"><i class="fa-solid fa-globe"></i> Ру</li>
+            <li data-lang="uz"><i class="fa-solid fa-globe"></i> Uz</li>
+          </ul>
+        </div>
+        <!-- Language Switcher End -->
+        <a href="/about.html" class="nav1" data-i18n="about_us_nav">About us</a>
+        <a href="/services.html" class="nav2" data-i18n="services_nav">Services</a>
+        <a href="/review.html" class="nav3" data-i18n="reviews_nav">Reviews</a>
+        <a href="/contact.html" class="nav4" data-i18n="contact_nav">Contact & Support</a>
         <div class="dropdown" tabindex="0">
           <span class="bar"><i class="fa-solid fa-bars"></i></span>
           <div class="dropdown-menu">
-            <a href="/SpeedAir/about.html" class="nav1">About us</a>
-            <a href="/SpeedAir/services.html" class="nav2">Services</a>
-            <a href="/SpeedAir/review.html" class="nav3">Reviews</a>
-            <a href="/SpeedAir/contact.html" class="nav4">Contact & Support</a>
+            <a href="/about.html" class="nav1" data-i18n="about_us_nav">About us</a>
+            <a href="/services.html" class="nav2" data-i18n="services_nav">Services</a>
+            <a href="/review.html" class="nav3" data-i18n="reviews_nav">Reviews</a>
+            <a href="/contact.html" class="nav4" data-i18n="contact_nav">Contact & Support</a>
           </div>
         </div>
       </nav>
     </header>
     <div class="services-container">
-      <h2>Our Services</h2>
+      <h2 data-i18n="services_title">Our Services</h2>
       <div class="service-list">
         <div class="service-item">
           <i class="fa-solid fa-plane-departure"></i>
-          <strong>Flight Bookings</strong>
-          <p>Book domestic and international flights with the best deals and flexible options.</p>
+          <strong data-i18n="flight_bookings">Flight Bookings</strong>
+          <p data-i18n="flight_bookings_desc">Book domestic and international flights with the best deals and flexible options.</p>
         </div>
         <div class="service-item">
           <i class="fa-solid fa-hotel"></i>
-          <strong>Hotel Reservations</strong>
-          <p>Choose from a wide range of hotels and accommodations to suit your needs and budget.</p>
+          <strong data-i18n="hotel_reservations">Hotel Reservations</strong>
+          <p data-i18n="hotel_reservations_desc">Choose from a wide range of hotels and accommodations to suit your needs and budget.</p>
         </div>
         <div class="service-item">
           <i class="fa-solid fa-car"></i>
-          <strong>Car Rentals</strong>
-          <p>Rent cars at your destination for convenience and comfort during your travels.</p>
+          <strong data-i18n="car_rentals">Car Rentals</strong>
+          <p data-i18n="car_rentals_desc">Rent cars at your destination for convenience and comfort during your travels.</p>
         </div>
         <div class="service-item">
           <i class="fa-solid fa-suitcase-rolling"></i>
-          <strong>Travel Packages</strong>
-          <p>Enjoy customized travel packages for families, couples, and solo adventurers.</p>
+          <strong data-i18n="travel_packages">Travel Packages</strong>
+          <p data-i18n="travel_packages_desc">Enjoy customized travel packages for families, couples, and solo adventurers.</p>
         </div>
         <div class="service-item">
           <i class="fa-solid fa-shield-alt"></i>
-          <strong>Travel Insurance</strong>
-          <p>Travel with peace of mind with our comprehensive insurance options.</p>
+          <strong data-i18n="travel_insurance">Travel Insurance</strong>
+          <p data-i18n="travel_insurance_desc">Travel with peace of mind with our comprehensive insurance options.</p>
         </div>
         <div class="service-item">
           <i class="fa-solid fa-headset"></i>
-          <strong>24/7 Support</strong>
-          <p>Our team is available around the clock to assist you before, during, and after your trip.</p>
+          <strong data-i18n="support_247">24/7 Support</strong>
+          <p data-i18n="support_247_desc">Our team is available around the clock to assist you before, during, and after your trip.</p>
         </div>
       </div>
-      <h2>Need Something Special?</h2>
-      <p>
-        Contact us for group bookings, business travel solutions, or any special requests. We're here to make your journey perfect!
+      <h2 data-i18n="need_special">Need Something Special?</h2>
+      <p data-i18n="ready_adventure">
+        Ready to plan your next adventure?
       </p>
       <p>
-        Email: <a href="mailto:info@speedair.com">info@speedair.com</a> <br>
-        Phone: +1 (555) 123-4567
+        <span data-i18n="email">Email</span>: <a href="mailto:info@speedair.com">info@speedair.com</a> <br>
+        <span data-i18n="phone">Phone</span>: +1 (929) 566-6963
       </p>
+      <!-- Contact Section Start -->
+      <section class="contact-section">
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2 data-i18n="contact_us">Contact Us</h2>
+            <p data-i18n="contact_us_desc">
+              Whether you have questions about our services, need support, or want to share your feedback, our dedicated
+              team is here to assist you every step of the way.
+            </p>
+            <div class="contact-details">
+              <div>
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <strong data-i18n="email">Email</strong>
+                  <span> info@speedairllc.com</span>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-globe"></i>
+                <div>
+                  <strong data-i18n="website">Website</strong>
+                  <span>https://speedairllc.com</span>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <strong data-i18n="phone">Phone</strong>
+                  <span>+1 929-566-6963</span>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <strong data-i18n="location">Location</strong>
+                  <span>27 Northgate Ave, Daly City, CA 94015</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form">
+            <h2 data-i18n="get_in_touch">Get in touch.</h2>
+            <input type="text" placeholder="Your Name" required data-i18n-placeholder="your_name">
+            <input type="email" placeholder="Email Address" required data-i18n-placeholder="email_address">
+            <input type="tel" placeholder="Phone Number" data-i18n-placeholder="phone_number">
+            <textarea placeholder="Message" required data-i18n-placeholder="message"></textarea>
+            <button type="submit" data-i18n="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+      <!-- Contact Section End -->
     </div>
     <footer class="about-footer">
-      &copy; 2024 SpeedAir Travel Agency. All rights reserved.
+      <span data-i18n="footer">&copy; 2025 SpeedAir Travel Agency. All rights reserved.</span>
     </footer>
+    <div class="phone-icon" onclick="window.location.href='tel:+19295666963'">
+      <i class="fas fa-phone"></i>
+    </div>
+  </div>
+  <script src="SpeeadairHome.js" defer></script>
+  <script src="services.js" defer></script>
+  <script src="lang.js"></script>
+</body>
+</html>

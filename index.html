@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title">SpeedAir</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="SpeedairHome.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="logo">
+        <img src="/pictures/SpeedairIcon.png" onclick="window.location.href='index.html'" alt="SpeedAir Logo" />
+        <span data-i18n="brand">SpeedAir</span>
+      </div>
+      <nav>
+        <!-- Language Switcher Start -->
+        <div class="lang-switcher">
+          <button id="lang-btn" aria-haspopup="listbox" type="button">
+            <i class="fa-solid fa-globe"></i>
+            <span id="lang-label">EN</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul id="lang-list" class="lang-list" tabindex="-1" hidden>
+            <li data-lang="en"><i class="fa-solid fa-globe"></i> En</li>
+            <li data-lang="ru"><i class="fa-solid fa-globe"></i> Ру</li>
+            <li data-lang="uz"><i class="fa-solid fa-globe"></i> Uz</li>
+          </ul>
+        </div>
+        <!-- Language Switcher End -->
+        <a href="/about.html" class="nav1" data-i18n="about_us_nav">About us</a>
+        <a href="/services.html" class="nav2" data-i18n="services_nav">Services</a>
+        <a href="/review.html" class="nav3" data-i18n="reviews_nav">Reviews</a>
+        <a href="/contact.html" class="nav4" data-i18n="contact_nav">Contact & Support</a>
+        <div class="dropdown" tabindex="0">
+          <span class="bar"><i class="fa-solid fa-bars"></i></span>
+          <div class="dropdown-menu">
+            <a href="/about.html" class="nav1" data-i18n="about_us_nav">About us</a>
+            <a href="/services.html" class="nav2" data-i18n="services_nav">Services</a>
+            <a href="/review.html" class="nav3" data-i18n="reviews_nav">Reviews</a>
+            <a href="/contact.html" class="nav4" data-i18n="contact_nav">Contact & Support</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="hero-bg"></div>
+
+    <!-- 1. Welcome text fixed at top half -->
+    <div class="welcome-text-fixed">
+      <h1 data-i18n="welcome">Welcome to SpeedAir</h1>
+      <p data-i18n="welcome_sub">Your journey begins with us.</p>
+    </div>
+
+    <!-- 2. Flight form fixed at lower half -->
+    <div class="flight-form-fixed">
+      <div class="flight-form">
+        <div class="trip-type">
+          <label><input type="radio" name="trip" value="round" checked data-i18n-placeholder="roundtrip" /> <span data-i18n="roundtrip">Roundtrip</span></label>
+          <label><input type="radio" name="trip" value="oneway" data-i18n-placeholder="oneway" /> <span data-i18n="oneway">One-way</span></label>
+        </div>
+        <div class="form-line">
+          <input type="text" id="depart" placeholder="Depart from" data-i18n-placeholder="depart_from" />
+          <button id="reverse">&#8646;</button>
+          <input type="text" id="arrive" placeholder="Arrive at" data-i18n-placeholder="arrive_at" />
+          <input type="date" id="depart-date" />
+          <input type="date" id="return-date" />
+          <button id="traveller-toggle" data-i18n="traveller_toggle">1 Adult, Economy</button>
+          <button class="search-btn" data-i18n="search">Search</button>
+        </div>
+        <div id="traveller-box" class="traveller-box hidden">
+          <div class="traveller-row">
+            <span data-i18n="adult">Adult 12+</span>
+            <button class="minus" data-type="adult">-</button>
+            <input type="number" id="adult" value="1" readonly />
+            <button class="plus" data-type="adult">+</button>
+          </div>
+          <div class="traveller-row">
+            <span data-i18n="child">Child 2-11</span>
+            <button class="minus" data-type="child">-</button>
+            <input type="number" id="child" value="0" readonly />
+            <button class="plus" data-type="child">+</button>
+          </div>
+          <div class="traveller-row">
+            <span data-i18n="infant">Infant 0-1</span>
+            <button class="minus" data-type="infant">-</button>
+            <input type="number" id="infant" value="0" readonly />
+            <button class="plus" data-type="infant">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Content section with background, covers 90vw, scrolls under fixed elements -->
+    <div class="content-section">
+      <div class="certificates-achievements">
+        <h2 data-i18n="certificates_title">Our Certificates & Achievements</h2>
+        <div class="certificates-list">
+          <div class="certificate-card">
+            <i class="fa-solid fa-award"></i>
+            <h3 data-i18n="iata_title">IATA Accredited Agent</h3>
+            <p data-i18n="iata_desc">Recognized by the International Air Transport Association for excellence in travel services and compliance.</p>
+          </div>
+          <div class="certificate-card">
+            <i class="fa-solid fa-medal"></i>
+            <h3 data-i18n="top_seller_title">Top Seller Award 2024</h3>
+            <p data-i18n="top_seller_desc">Honored as a top seller by leading airlines for outstanding ticket sales and customer satisfaction.</p>
+          </div>
+          <div class="certificate-card">
+            <i class="fa-solid fa-globe"></i>
+            <h3 data-i18n="global_member_title">Global Travel Network Member</h3>
+            <p data-i18n="global_member_desc">Part of a worldwide network of trusted travel agencies, ensuring quality and reliability for our clients.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-benefit section-card">
+        <h2 data-i18n="why_book">Why Book With SpeedAir?</h2>
+        <p data-i18n="why_book_desc">
+          Enjoy a seamless booking experience with instant confirmation, flexible options, and exclusive offers tailored for you.
+          Our platform is designed for your convenience, allowing you to compare flights, manage your bookings, and access support anytime.
+          Whether you’re planning a business trip or a family vacation, SpeedAir ensures you get the best value and service every step of the way.
+        </p>
+      </div>
+
+      <div class="agency-stats section-card">
+        <div class="agency-stats-list">
+          <div class="agency-card">
+            <h3>30+</h3>
+            <p data-i18n="agents">Professional Agents</p>
+            <p class="desc" data-i18n="agents_desc">Our dedicated team of travel experts is always ready to assist you with personalized service and expert advice.</p>
+          </div>
+          <div class="agency-card">
+            <h3>2M+</h3>
+            <p data-i18n="customers">Happy Customers</p>
+            <p class="desc" data-i18n="customers_desc">Millions of travelers trust SpeedAir for their journeys, thanks to our commitment to satisfaction and reliability.</p>
+          </div>
+          <div class="agency-card">
+            <h3>3+</h3>
+            <p data-i18n="years">Years Experience</p>
+            <p class="desc" data-i18n="years_desc">With years of industry experience, we understand your needs and deliver solutions that make travel easy and enjoyable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits-features section-card">
+        <h2 data-i18n="benefits_title">Our Benefits & Features</h2>
+        <ul>
+          <li>
+            <i class="fa-solid fa-tags"></i>
+            <strong data-i18n="best_price">Best Price Deals</strong>
+            <p data-i18n="best_price_desc">
+              We constantly monitor fares to bring you the lowest prices and exclusive discounts on flights worldwide.
+            </p>
+          </li>
+          <li>
+            <i class="fa-solid fa-headset"></i>
+            <strong data-i18n="live_support">24/7 Live Support</strong>
+            <p data-i18n="live_support_desc">
+              Our support team is available around the clock to help you with bookings, changes, or any travel questions.
+            </p>
+          </li>
+          <li>
+            <i class="fa-solid fa-shield-halved"></i>
+            <strong data-i18n="reliable_safe">Reliable &amp; Safe</strong>
+            <p data-i18n="reliable_safe_desc">
+              Your safety and privacy are our top priorities. We use secure technology and partner only with trusted airlines.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <!-- Contact Section Start -->
+      <section class="contact-section">
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2 data-i18n="contact_us">Contact Us</h2>
+            <p data-i18n="contact_us_desc">
+              Whether you have questions about our services, need support, or want to share your feedback, our dedicated team is here to assist you every step of the way.
+            </p>
+            <div class="contact-details">
+              <div>
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <strong data-i18n="email">Email</strong>
+                  <span> info@speedairllc.com</span>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-globe"></i>
+                <div>
+                  <strong data-i18n="website">Website</strong>
+                  <span>https://speedairllc.com</span>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <strong data-i18n="phone">Phone</strong>
+                  <span>+1 929-566-6963</span>
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <strong data-i18n="location">Location</strong>
+                  <span>27 Northgate Ave, Daly City, CA 94015</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form">
+            <h2 data-i18n="get_in_touch">Get in touch.</h2>
+            <input type="text" placeholder="Your Name" required data-i18n-placeholder="your_name">
+            <input type="email" placeholder="Email Address" required data-i18n-placeholder="email_address">
+            <input type="tel" placeholder="Phone Number" data-i18n-placeholder="phone_number">
+            <textarea placeholder="Message" required data-i18n-placeholder="message"></textarea>
+            <button type="submit" data-i18n="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+      <!-- Contact Section End -->
+    </div>
+    <footer>
+      <p data-i18n="footer">&copy; 2025 SpeedAir. All rights reserved.</p>
+    </footer>
+
+    <div class="phone-icon" onclick="window.location.href='tel:+192956669363'">
+      <i class="fas fa-phone"></i>
+    </div>
+    <script src="SpeeadairHome.js" defer></script>
+    <script src="lang.js" defer></script>
+  </div>
+</body>
+</html>

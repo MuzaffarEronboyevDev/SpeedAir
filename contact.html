@@ -1,288 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact & Support | SpeedAir</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="SpeedairHome.css" />
-  <script src="SpeeadairHome.js" defer></script>
-  <style>
-/* Add this inside your <style> tag or external CSS file */
-
-/* --- Contact Grid Layout --- */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  margin-bottom: 32px;
-}
-
-/* --- Contact Box Styling --- */
-.contact-box {
-  background: #f7fbff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(5,111,204,0.07);
-  padding: 22px 18px 18px 18px;
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  opacity: 0;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-.contact-box h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #056fcc;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.contact-box p, .contact-box a {
-  margin: 8px 0;
-  color: #003973;
-  font-size: 1rem;
-}
-
-/* --- Social Grid --- */
-.social-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 8px;
-}
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #e0f2fe;
-  color: #056fcc;
-  border-radius: 6px;
-  padding: 8px 10px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.2s, color 0.2s;
-}
-.social-btn:hover {
-  background: #056fcc;
-  color: #fff;
-}
-
-/* --- Contact Form Box --- */
-.contact-form-box {
-  background: #f7fbff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(5,111,204,0.07);
-  padding: 22px 18px 18px 18px;
-  margin-bottom: 32px;
-  margin-top: 18px;
-  opacity: 0;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-bottom: 12px;
-}
-.contact-form-box label {
-  font-weight: 500;
-  color: #056fcc;
-}
-.contact-form-box input,
-.contact-form-box textarea {
-  width: 100%;
-  border: 1px solid #bcdffb;
-  border-radius: 6px;
-  padding: 10px;
-  font-size: 1rem;
-  margin-top: 4px;
-  margin-bottom: 10px;
-  background: #fff;
-  transition: border 0.2s, box-shadow 0.2s;
-}
-.contact-form-box input:focus,
-.contact-form-box textarea:focus {
-  border-color: #056fcc;
-  box-shadow: 0 0 0 2px #bcdffb;
-}
-
-/* --- Support Section --- */
-.support-section {
-  background: #e0f2fe;
-  border-radius: 12px;
-  padding: 24px 18px;
-  margin-top: 32px;
-}
-.support-section h2 {
-  color: #056fcc;
-  margin-top: 0;
-}
-.support-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 12px;
-}
-.support-box {
-  background: #f7fbff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(5,111,204,0.07);
-  padding: 18px 14px;
-  opacity: 0;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-.support-box p, .support-box a {
-  margin: 10px 0;
-  color: #003973;
-  font-size: 1rem;
-}
-.support-box i {
-  color: #056fcc;
-  margin-right: 6px;
-}
-
-/* --- Responsive --- */
-@media (max-width: 900px) {
-  .contact-grid, .support-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .social-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* --- Animation on Scroll (already in your JS) --- */
-.contact-box, .contact-form-box, .support-box {
-  opacity: 0;
-}
-</style>
-  </style>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
+
 <body>
-  <div class="wrapper">
-    <header>
-      <div class="logo">
-        <img src="/SpeedAir/pictures/SpeedairIcon.png" alt="SpeedAir Logo" />
-        <span>SpeedAir</span>
-      </div>
-      <nav>
-        <a href="/SpeedAir/about.html" class="nav1">About us</a>
-        <a href="/SpeedAir/services.html" class="nav2">Services</a>
-        <a href="/SpeedAir/review.html" class="nav3">Reviews</a>
-        <a href="/SpeedAir/contact.html" class="nav4">Contact & Support</a>
+  <header>
+    <div class="logo">
+      <img src="/pictures/SpeedairIcon.png" onclick="window.location.href='index.html'" alt="SpeedAir Logo" />
+      <span>SpeedAir</span>
+    </div>
+    <nav>
+        <!-- Language Switcher Start -->
+        <div class="lang-switcher">
+          <button id="lang-btn" aria-haspopup="listbox" type="button">
+            <i class="fa-solid fa-globe"></i>
+            <span id="lang-label">EN</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul id="lang-list" class="lang-list" tabindex="-1" hidden>
+            <li data-lang="en"><i class="fa-solid fa-globe"></i> En</li>
+            <li data-lang="ru"><i class="fa-solid fa-globe"></i> Ру</li>
+            <li data-lang="uz"><i class="fa-solid fa-globe"></i> Uz</li>
+          </ul>
+        </div>
+        <!-- Language Switcher End -->
+        <a href="/about.html" class="nav1" data-i18n="about_us_nav">About us</a>
+        <a href="/services.html" class="nav2" data-i18n="services_nav">Services</a>
+        <a href="/review.html" class="nav3" data-i18n="reviews_nav">Reviews</a>
+        <a href="/contact.html" class="nav4" data-i18n="contact_nav">Contact & Support</a>
         <div class="dropdown" tabindex="0">
           <span class="bar"><i class="fa-solid fa-bars"></i></span>
           <div class="dropdown-menu">
-            <a href="/SpeedAir/about.html" class="nav1">About us</a>
-            <a href="/SpeedAir/services.html" class="nav2">Services</a>
-            <a href="/SpeedAir/review.html" class="nav3">Reviews</a>
-            <a href="/SpeedAir/contact.html" class="nav4">Contact & Support</a>
+            <a href="/about.html" class="nav1" data-i18n="about_us_nav">About us</a>
+            <a href="/services.html" class="nav2" data-i18n="services_nav">Services</a>
+            <a href="/review.html" class="nav3" data-i18n="reviews_nav">Reviews</a>
+            <a href="/contact.html" class="nav4" data-i18n="contact_nav">Contact & Support</a>
           </div>
         </div>
       </nav>
-    </header>
-    <!-- ...existing code... -->
-    <div class="contact-container">
-      <h2>Contact Information</h2>
-      <div class="contact-grid">
-        <div class="contact-info contact-box">
-          <h3><i class="fa-solid fa-envelope"></i> Email</h3>
-          <p><a href="mailto:support@speedair.com">support@speedair.com</a></p>
-          <h3><i class="fa-solid fa-phone"></i> Phone</h3>
-          <p>+1 (800) 123-4567</p>
-          <h3><i class="fa-solid fa-clock"></i> Working Hours</h3>
-          <p>Mon–Fri, 9:00 AM – 6:00 PM</p>
-        </div>
-        <div class="contact-map contact-box">
-          <h3><i class="fa-solid fa-location-dot"></i> Address</h3>
-          <p>123 Skyway Ave, Suite 200,<br>New York, NY 10001</p>
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-74.00597,40.71278,-73.98597,40.73278&amp;layer=mapnik&amp;marker=40.72278,-73.99597"
-            style="border-radius:8px; width:100%; height:160px; border:0; margin-top:8px;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="SpeedAir Location"></iframe>
-          <div style="margin-top:8px;">
-            <a href="https://www.openstreetmap.org/?mlat=40.72278&amp;mlon=-73.99597#map=16/40.72278/-73.99597" target="_blank" style="color:#056fcc;">View Larger Map</a>
+  </header>
+
+  <div class="contact-main-container">
+    <h2>Contact Information</h2>
+    <div class="contact-main-grid">
+      <div class="contact-main-box">
+        <h3><i class="fa-solid fa-headset"></i> Contact Methods</h3>
+        <ul class="contact-methods-list">
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <strong>Email:</strong>
+            <a href="mailto:support@speedair.com">support@speedair.com</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <strong>Phone:</strong>
+            <a href="tel:+1234567890">+1 (234) 567-890</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-question-circle"></i>
+            <strong>FAQ:</strong>
+            <a href="/faq.html">Frequently Asked Questions</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-comments"></i>
+            <strong>Live Chat:</strong>
+            <a href="https://t.me/speedairllc" >Start Chat</a>
+          </li>
+        </ul>
+        <script>
+          function openLiveChat() {
+            alert('Live chat feature coming soon!');
+          }
+        </script>
+      </div>
+      <div class="contact-main-box contact-main-map">
+        <h3><i class="fa-solid fa-location-dot"></i> <span data-i18n="our_locations">Our Locations</span></h3>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <div class="contact-main-box"
+            style="flex: 1 1 300px; min-width: 260px; box-shadow:none; padding:0; background:transparent;">
+            <h4><i class="fa-solid fa-location-dot"></i> USA Office</h4>
+            <p>27 Northgate Ave,<br>Daly City, CA 94015</p>
+            <div id="map-dalycity" style="border-radius:8px; width:100%; height:160px; border:0; margin-top:8px;"></div>
           </div>
-        </div>
-        <div class="contact-social contact-box">
-          <h3><i class="fa-solid fa-share-nodes"></i> Connect With Us</h3>
-          <div class="social-grid">
-            <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i> Twitter</a>
-            <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <div class="contact-main-box"
+            style="flex: 1 1 300px; min-width: 260px; box-shadow:none; padding:0; background:transparent;">
+            <h4><i class="fa-solid fa-location-dot"></i> Uzbekistan Office</h4>
+            <p>Seoul Plaza,<br>Tashkent, Uzbekistan</p>
+            <div id="map-tashkent" style="border-radius:8px; width:100%; height:160px; border:0; margin-top:8px;"></div>
           </div>
         </div>
       </div>
-      <h2>Send Us a Message</h2>
-      <form class="contact-form-box">
-        <div class="form-row">
-          <div>
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div>
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-        </div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <div class="support-section">
-        <h2>Support</h2>
-        <div class="support-grid">
-          <div class="support-box">
-            <p><i class="fa-solid fa-headset"></i> <strong>24/7 Hotline:</strong><br>
-              <a href="tel:+18009876543">+1 (800) 987-6543</a>
-            </p>
-            <p><i class="fa-solid fa-comments"></i> <strong>Live Chat:</strong><br>
-              <a href="#">Start Chat</a>
-            </p>
-          </div>
-          <div class="support-box">
-            <p><i class="fa-solid fa-circle-question"></i> <strong>FAQ:</strong><br>
-              <a href="#">Visit our FAQ page</a>
-            </p>
-            <p><i class="fa-solid fa-paper-plane"></i> <strong>Feedback:</strong><br>
-              <a href="mailto:feedback@speedair.com">feedback@speedair.com</a>
-            </p>
-          </div>
+      <div class="contact-main-box contact-main-social">
+        <h3><i class="fa-solid fa-share-nodes"></i> Connect With Us</h3>
+        <div class="contact-main-social-grid">
+          <a href="https://www.facebook.com/people/SpeedAir/61567010480947/" class="contact-main-social-btn" title="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="https://www.instagram.com/speedair_/" class="contact-main-social-btn" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://t.me/speedairllc" class="contact-main-social-btn" title="Telegram"><i class="fab fa-telegram"></i> Telegram</a>
+          <a href="#" class="contact-main-social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
     </div>
-    <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll('.contact-box, .contact-form-box, .support-box');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.animation = 'slideUp 0.8s ease forwards';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    elements.forEach(el => observer.observe(el));
-  });
-</script>
-
-    <footer class="about-footer">
-      &copy; 2024 SpeedAir Travel Agency. All rights reserved.
-    </footer>
   </div>
+  <div class="main-contact-section">
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Contact Us</h2>
+          <p>
+            Whether you have questions about our services, need support, or want to share your feedback, our dedicated
+            team is here to assist you every step of the way.
+          </p>
+          <div class="contact-details">
+            <div>
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <span> info@speedairllc.com</span>
+              </div>
+            </div>
+            <div>
+              <i class="fa-solid fa-globe"></i>
+              <div>
+                <strong>Website</strong>
+                <span><a href="https://speedairllc.com">https://speedairllc.com</a></span>
+              </div>
+            </div>
+            <div>
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>Phone</strong>
+                <span><a href="tel:+1234567890">+1 (234) 567-890</a></span>
+              </div>
+            </div>
+            <div>
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Location</strong>
+                <span>27 Northgate Ave, Daly City, CA 94015</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form">
+          <h2>Get in touch.</h2>
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="tel" placeholder="Phone Number">
+          <textarea placeholder="Message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <div class="phone-icon" onclick="window.location.href='tel:104'">
+    <i class="fas fa-phone"></i>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SpeedAir. All rights reserved.</p>
+  </footer>
+  </div>
+  <script src="SpeeadairHome.js" defer></script>
+  <script src = "lang.js" > </script> 
+  <script src="about.js" defer></script>
 </body>
+
+</html>
